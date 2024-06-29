@@ -3,7 +3,7 @@
 
 import Locks
 
-class LogFmt<Category: RawRepresentable> where Category.RawValue == String {
+class Logfmt<Category: RawRepresentable> where Category.RawValue == String {
     enum Level: Int, CaseIterable, Comparable {
         case verbose = 0
         case debug = 1

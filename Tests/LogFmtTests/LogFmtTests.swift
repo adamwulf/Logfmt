@@ -1,7 +1,7 @@
 import XCTest
-@testable import LogFmt
+@testable import Logfmt
 
-final class LogFmtTests: XCTestCase {
+final class LogfmtTests: XCTestCase {
     let str = "mumble"
     let bumble = MyClass()
 
@@ -11,11 +11,10 @@ final class LogFmtTests: XCTestCase {
     }
 
     func testExample2() throws {
-        let foo = LogFmt<MyCategory>(with: .info)
+        let foo = Logfmt<MyCategory>(with: .info)
         foo.info(.foo, context: ["foo": "2", "bar": str, "fumble": bumble])
     }
 }
-
 
 enum MyCategory: String {
     case foo
