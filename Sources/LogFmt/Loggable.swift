@@ -8,12 +8,17 @@
 import Foundation
 
 /// Protocol for objects that can be converted to Logfmt strings
-public protocol CustomLogfmtStringConvertible {
+public protocol CustomLogfmtStringConvertible: Loggable {
     /// The Logfmt description of the object
-    var logfmtDescription: String { get }
+    var loggingDescription: String { get }
 }
 
-protocol Loggable: Any { }
+public protocol CustomLogfmtDictionaryConvertible: Loggable {
+    /// The Logfmt description of the object
+    var loggingDictionary: [String: Loggable] { get }
+}
+
+public protocol Loggable: Any { }
 
 extension Optional: Loggable { }
 

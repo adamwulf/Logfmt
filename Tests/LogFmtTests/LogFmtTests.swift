@@ -64,6 +64,10 @@ final class LogfmtTests: XCTestCase {
                                                       "memory.peak.limit=2000"].joined(separator: " "))
     }
 
+    func testLogfmt2() {
+        let str1 = Humble()
+        XCTAssertEqual(String.logfmt(str1), "customString.one=1 customString.two=two")
+    }
 }
 
 enum MyCategory: String {
@@ -71,17 +75,16 @@ enum MyCategory: String {
 }
 
 class MyClass: CustomLogfmtStringConvertible {
-    var logfmtDescription: String {
+    var loggingDescription: String {
         "myclass: yep!"
     }
 }
 
 class Bumble: CustomLogfmtStringConvertible {
-    var logfmtDescription: String {
+    var loggingDescription: String {
         return "grumblebumble"
     }
 }
-
 class Fumble: CustomDebugStringConvertible {
     var debugDescription: String {
         return "debugStr"
@@ -90,6 +93,11 @@ class Fumble: CustomDebugStringConvertible {
 class Mumble: CustomStringConvertible {
     var description: String {
         return "customString"
+    }
+}
+class Humble: CustomLogfmtDictionaryConvertible {
+    var loggingDictionary: [String : any Loggable] {
+        return ["customString": ["one": 1, "two": "two"]]
     }
 }
 class Grumble { }

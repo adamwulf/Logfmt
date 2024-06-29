@@ -36,7 +36,9 @@ private extension String {
             })
             return mapped.joined(separator: " ")
         case let object as CustomLogfmtStringConvertible:
-            return logfmt(object.logfmtDescription, attribute: attribute)
+            return logfmt(object.loggingDescription, attribute: attribute)
+        case let object as CustomLogfmtDictionaryConvertible:
+            return logfmt(object.loggingDictionary, attribute: attribute)
         case let object as CustomStringConvertible:
             return logfmt(object.description, attribute: attribute)
         case let object as OptionalProtocol:
