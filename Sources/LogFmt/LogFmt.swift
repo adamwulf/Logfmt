@@ -37,7 +37,7 @@ class Logfmt<Category: RawRepresentable> where Category.RawValue == String {
             let updatedLevel = min(requiredLogLevel, newValue)
             if oldValue != updatedLevel {
                 minLogLevel = updatedLevel
-//                logfmt(level: .info, category: "logging", context: ["level": ["from": oldValue, "to": updatedLevel]])
+                logfmt(level: .info, category: "logging", context: ["level": ["from": oldValue, "to": updatedLevel]])
             }
         }
     }
