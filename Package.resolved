@@ -1,0 +1,15 @@
+{
+  "originHash" : "f1f82d21fcd9b78d84c8d26a9039d7d0c0673ddae43712f3e7443333c858a6f0",
+  "pins" : [
+    {
+      "identity" : "swifttoolbox",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/adamwulf/SwiftToolbox",
+      "state" : {
+        "branch" : "main",
+        "revision" : "ece32b3404509c5619a4835ea9479d224a78ef36"
+      }
+    }
+  ],
+  "version" : 3
+}

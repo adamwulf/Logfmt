@@ -5,17 +5,26 @@ import PackageDescription
 
 let package = Package(
     name: "LogFmt",
+    platforms: [
+        .macOS(.v10_14)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "LogFmt",
             targets: ["LogFmt"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/adamwulf/SwiftToolbox", branch: "main"),
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "LogFmt"),
+            name: "LogFmt",
+            dependencies: [
+                .product(name: "SwiftToolbox", package: "swifttoolbox"),
+            ]),
         .testTarget(
             name: "LogFmtTests",
             dependencies: ["LogFmt"]),
