@@ -1,13 +1,22 @@
 {
-  "originHash" : "f1f82d21fcd9b78d84c8d26a9039d7d0c0673ddae43712f3e7443333c858a6f0",
+  "originHash" : "196e013b5878f23674e1a76809cd14a27c6a59755eb2073b00e4b6ef5ae8e774",
   "pins" : [
     {
-      "identity" : "swifttoolbox",
+      "identity" : "locks",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/adamwulf/SwiftToolbox",
+      "location" : "https://github.com/adamwulf/Locks",
       "state" : {
         "branch" : "main",
-        "revision" : "ece32b3404509c5619a4835ea9479d224a78ef36"
+        "revision" : "e5c133845f3ad1a890a8823374c2694f969884e2"
+      }
+    },
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log.git",
+      "state" : {
+        "revision" : "9cb486020ebf03bfa5b5df985387a14a98744537",
+        "version" : "1.6.1"
       }
     }
   ],
