@@ -1,15 +1,6 @@
 {
-  "originHash" : "196e013b5878f23674e1a76809cd14a27c6a59755eb2073b00e4b6ef5ae8e774",
+  "originHash" : "f60375dd90f3a79b35eacfee3dcc07166c01e22a0f58c3f96b0da5323071776e",
   "pins" : [
-    {
-      "identity" : "locks",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/adamwulf/Locks",
-      "state" : {
-        "branch" : "main",
-        "revision" : "e5c133845f3ad1a890a8823374c2694f969884e2"
-      }
-    },
     {
       "identity" : "swift-log",
       "kind" : "remoteSourceControl",

@@ -15,7 +15,6 @@ let package = Package(
             targets: ["Logfmt"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/adamwulf/Locks", branch: "main"),
         .package(url: "https://github.com/apple/swift-log.git", from: "1.0.0"),
     ],
     targets: [
@@ -24,7 +23,6 @@ let package = Package(
         .target(
             name: "Logfmt",
             dependencies: [
-                .product(name: "Locks", package: "Locks"),
                 .product(name: "Logging", package: "swift-log"),
             ]),
         .testTarget(

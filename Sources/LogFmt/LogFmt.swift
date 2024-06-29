@@ -1,7 +1,7 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
-import Locks
+import Foundation
 
 class Logfmt<Category: RawRepresentable> where Category.RawValue == String {
     enum Level: Int, CaseIterable, Comparable {
@@ -21,13 +21,13 @@ class Logfmt<Category: RawRepresentable> where Category.RawValue == String {
     // This is the maximum allowed level that logging can be set to.
     // This prevents a user from setting logging too restrictively and
     // us not being able to debug a situation because logs are sparse.
-    @Atomic var requiredLogLevel: Level = .info {
+    var requiredLogLevel: Level = .info {
         didSet {
             minLogLevel = min(requiredLogLevel, minLogLevel)
         }
     }
 
-    @Atomic private var minLogLevel: Level = .verbose
+    private var minLogLevel: Level = .verbose
     var logLevel: Level {
         get {
             return minLogLevel
