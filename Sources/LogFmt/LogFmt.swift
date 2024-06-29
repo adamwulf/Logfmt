@@ -54,7 +54,7 @@ class Logfmt<Category: RawRepresentable> where Category.RawValue == String {
               file: String = #file,
               function: String = #function,
               line: Int = #line,
-              context: [String: Loggable]? = nil) {
+              context: [String: Any?]? = nil) {
         logfmt(level: .info, category: category.rawValue, file: file, function: function, line: line, context: context)
     }
 
@@ -63,7 +63,7 @@ class Logfmt<Category: RawRepresentable> where Category.RawValue == String {
                  file: String = #file,
                  function: String = #function,
                  line: Int = #line,
-                 context: [String: Loggable]? = nil) {
+                 context: [String: Any?]? = nil) {
         logfmt(level: .warning, category: category.rawValue, file: file, function: function, line: line, context: context)
     }
 
@@ -72,7 +72,7 @@ class Logfmt<Category: RawRepresentable> where Category.RawValue == String {
                file: String = #file,
                function: String = #function,
                line: Int = #line,
-               context: [String: Loggable]? = nil) {
+               context: [String: Any?]? = nil) {
         logfmt(level: .error, category: category.rawValue, file: file, function: function, line: line, context: context)
     }
 
@@ -82,7 +82,7 @@ class Logfmt<Category: RawRepresentable> where Category.RawValue == String {
                 file: String = #file,
                 function: String = #function,
                 line: Int = #line,
-                context: [String: Loggable]? = nil) {
+                context: [String: Any?]? = nil) {
         logfmt(level: level, category: category.rawValue, file: file, function: function, line: line, context: context)
     }
 
@@ -91,7 +91,7 @@ class Logfmt<Category: RawRepresentable> where Category.RawValue == String {
                         file: String = #file,
                         function: String = #function,
                         line: Int = #line,
-                        context: [String: Loggable]? = nil) {
+                        context: [String: Any?]? = nil) {
         guard let context = context else { return }
         print(String.logfmt(context))
     }

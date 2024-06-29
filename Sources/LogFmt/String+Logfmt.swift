@@ -10,7 +10,7 @@ import Foundation
 public extension String {
     /// Format the input object as lotfmt as best as possible. Supports dictionaries, arrays, strings, numbers, CustomStringConvertables
     /// - seealso: https://www.brandur.org/logfmt
-    static func logfmt(_ object: Loggable) -> String {
+    static func logfmt(_ object: Any) -> String {
         return Self.logfmt(object, attribute: "")
     }
 }
